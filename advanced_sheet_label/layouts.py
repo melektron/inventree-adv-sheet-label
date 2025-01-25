@@ -140,6 +140,39 @@ LAYOUTS = {
         column_spacing=0,
         row_spacing=0,
         corner_radius=0
+    ),
+    "50x25-R": SheetLayout(
+        display_name="Avery 50x25-R",
+        page_size=PAPER_SIZES["A4"],
+        label_width=50.0,
+        label_height=25.0,
+        columns=3,
+        rows=8,
+        column_spacing=10.0,
+        row_spacing=10.0,
+        corner_radius=2.0,
+    ),
+    "105x42-R": SheetLayout (
+        display_name="Avery 105x42-R",
+        page_size=PAPER_SIZES["A4"],
+        label_width=105.0,
+        label_height=42.0,
+        columns=2,
+        rows=7,
+        column_spacing=0,
+        row_spacing=0,
+        corner_radius=0,
+    ),
+    "40x12-R": SheetLayout (
+        display_name="Avery 40x12-R",
+        page_size=PAPER_SIZES["A4"],
+        label_width=40.0,
+        label_height=12.0,
+        columns=4,
+        rows=17,
+        column_spacing=5.0,
+        row_spacing=5.0,
+        corner_radius=2.0,
     )
 }
 
