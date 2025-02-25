@@ -135,12 +135,12 @@ class AdvancedLabelSheetPlugin(LabelPrintingMixin, SettingsMixin, InvenTreePlugi
 
     PrintingOptionsSerializer = AdvancedLabelPrintingOptionsSerializer
 
-    def __init__(self):
-        _log.debug("Initializing Advanced Sheet Label Plugin")
-        super().__init__()
-        # save instance so serializers can access it.
-        global _plugin_instance
-        _plugin_instance = self
+    #def __init__(self):
+    #    _log.debug("Initializing Advanced Sheet Label Plugin")
+    #    super().__init__()
+    #    # save instance so serializers can access it.
+    #    global _plugin_instance
+    #    _plugin_instance = self
     
     @property
     def label_skip_counter(self) -> int:
