@@ -149,10 +149,11 @@ LAYOUTS = {
         label_height=16.92,
         columns=4,
         rows=15,
-        column_spacing=7.49,
+        column_spacing=7.46,
         row_spacing=0,
         corner_radius=1.25,
-        spacing_top=12.83
+        spacing_top=14.28,
+        spacing_left=7.18
     )
 }
 
