@@ -130,6 +130,12 @@ class AdvancedLabelSheetPlugin(LabelPrintingMixin, SettingsMixin, InvenTreePlugi
                 MinValueValidator(0)
             ],
             "hidden": True  # maybe shoudl actually show this for manual reset? but for now I'll not show it
+        },
+        "DEBUG": {
+            'name': _('Debug mode'),
+            'description': _('Enable debug mode - returns raw HTML instead of PDF'),
+            'validator': bool,
+            'default': False,
         }
     }
 
@@ -222,7 +228,7 @@ class AdvancedLabelSheetPlugin(LabelPrintingMixin, SettingsMixin, InvenTreePlugi
             """
             Printing interface for InvenTree 0.15.x (current stable)
             """
-            output_file = ContentFile(self._print_labels(label, items, request, **kwargs), 'labels.pdf')
+            output_file = self._print_labels(label, items, request, **kwargs)
             output = LabelOutput.objects.create(label=output_file, user=request.user)
             return JsonResponse({
                 'file': output.label.url,
@@ -237,7 +243,7 @@ class AdvancedLabelSheetPlugin(LabelPrintingMixin, SettingsMixin, InvenTreePlugi
             """
             Printing interface for InvenTree 0.16.x (currently not released yet)
             """
-            output.output = ContentFile(self._print_labels(label, items, request, **kwargs), 'labels.pdf')
+            output.output = self._print_labels(label, items, request, **kwargs)
             output.progress = 100
             output.complete = True
             output.save()
@@ -316,9 +322,13 @@ class AdvancedLabelSheetPlugin(LabelPrintingMixin, SettingsMixin, InvenTreePlugi
         # render to a single HTML document
         html_data = self.wrap_pages(pages, border, fill_color, sheet_layout)
 
+        if str2bool(self.get_setting('DEBUG')):
+            # In debug mode, return raw HTML output
+            return html_data
+        
         # render HTML to PDF
         html = weasyprint.HTML(string=html_data)
-        return html.render().write_pdf()
+        return ContentFile(html.render().write_pdf(), 'labels.pdf')
 
     def print_page(self, label: LabelTemplate, items: list, request, sheet_layout: SheetLayout):
         """Generate a single page of labels.
