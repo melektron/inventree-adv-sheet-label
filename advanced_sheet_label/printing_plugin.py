@@ -15,6 +15,7 @@ from django.utils.translation import gettext_lazy as _
 from rest_framework.request import Request
 import weasyprint
 from rest_framework import serializers
+from InvenTree.helpers import str2bool
 from plugin import InvenTreePlugin
 from plugin.mixins import LabelPrintingMixin, SettingsMixin
 
