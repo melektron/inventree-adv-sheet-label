@@ -140,6 +140,18 @@ LAYOUTS = {
         column_spacing=0,
         row_spacing=0,
         corner_radius=0
+    ),
+    "5195": SheetLayout(
+        display_name="Avery 5195",
+        page_size=PAPER_SIZES["Letter"],
+        label_width=44.45,
+        label_height=16.92,
+        columns=4,
+        rows=15,
+        column_spacing=7.49,
+        row_spacing=0,
+        corner_radius=1.25,
+        spacing_top=12.83
     )
 }
 
