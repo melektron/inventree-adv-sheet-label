@@ -152,8 +152,8 @@ LAYOUTS = {
         column_spacing=7.46,
         row_spacing=0,
         corner_radius=1.25,
-        spacing_top=14.28,
-        spacing_left=7.18
+#        spacing_top=14.28,
+#        spacing_left=7.18
     )
 }
 
