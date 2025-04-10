@@ -152,6 +152,17 @@ LAYOUTS = {
         column_spacing=0,
         row_spacing=0.1,
         corner_radius=0
+    ),
+    "1x2": SheetLayout(
+        display_name="1x2",
+        page_size=PAPER_SIZES["60x100mm"],
+        label_width=60,
+        label_height=50,
+        columns=1,
+        rows=2,
+        column_spacing=0,
+        row_spacing=0,
+        corner_radius=0
     )
 }
 
