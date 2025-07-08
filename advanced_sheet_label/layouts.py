@@ -140,7 +140,52 @@ LAYOUTS = {
         column_spacing=0,
         row_spacing=0,
         corner_radius=0
-    )
+    ),
+    # my own custom Label Sheet layouts
+    "1367853": SheetLayout(
+        display_name="1367853",
+        page_size=PAPER_SIZES["A4"],
+        label_width=48.5,
+        label_height=16.9,
+        columns=4,
+        rows=16,
+        column_spacing=0,
+        row_spacing=0,
+        corner_radius=0
+    ),
+    "4210": SheetLayout(
+        display_name="4210",
+        page_size=PAPER_SIZES["A4"],
+        label_width=38.1,
+        label_height=12.7,
+        columns=5,
+        rows=22,
+        column_spacing=0,
+        row_spacing=0,
+        corner_radius=0
+    ),
+    "1367586": SheetLayout(
+        display_name="1367586",
+        page_size=PAPER_SIZES["A4"],
+        label_width=70,
+        label_height=36,
+        columns=3,
+        rows=8,
+        column_spacing=0,
+        row_spacing=0,
+        corner_radius=0
+    ),
+    "8724": SheetLayout(
+        display_name="8724",
+        page_size=PAPER_SIZES["A4"],
+        label_width=46,
+        label_height=11.1,
+        columns=4,
+        rows=21,
+        column_spacing=4.8,
+        row_spacing=1.6,
+        corner_radius=1
+    )    
 }
 
 LAYOUT_SELECT_OPTIONS = [
