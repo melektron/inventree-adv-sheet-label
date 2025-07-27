@@ -83,11 +83,11 @@ LAYOUTS = {
         label_height=37,
         columns=4,
         rows=6,
-        column_spacing=7.8,                     # space between two columns, not margins
-        row_spacing=0,                          # space between two rows, not margins
+        column_spacing=8.8,                     # space between two columns, not margins
+        row_spacing=6.1,                        # space between two rows, not margins
         corner_radius=0,                        # radius of label corners
-        spacing_top=11.95,                      # Spacing of top margin
-        spacing_left=20                         # Spacing of left margin
+        spacing_top=12,                      # Spacing of top margin
+        spacing_left=20.1                         # Spacing of left margin
     ),
     "4780": SheetLayout(
         display_name="4780",
