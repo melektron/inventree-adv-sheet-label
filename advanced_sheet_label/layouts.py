@@ -72,6 +72,7 @@ class SheetLayout:
 
 PAPER_SIZES = {
     "A4": PaperSize("A4", 210, 297)
+    "Letter": PaperSize("Letter", 215.9, 279.4)
 }
 
 LAYOUTS = {
