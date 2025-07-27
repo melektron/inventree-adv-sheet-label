@@ -71,7 +71,7 @@ class SheetLayout:
         return f"{self.display_name} ({self.page_size.display_name}, {self.label_width}mm x {self.label_height}mm, {self.columns} columns x {self.rows} rows, {'round corners' if self.corner_radius != 0 else 'sharp corners'})"
 
 PAPER_SIZES = {
-    "A4": PaperSize("A4", 210, 297)
+    "A4": PaperSize("A4", 210, 297),
     "Letter": PaperSize("Letter", 215.9, 279.4)
 }
 
