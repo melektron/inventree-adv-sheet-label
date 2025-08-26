@@ -71,7 +71,8 @@ class SheetLayout:
         return f"{self.display_name} ({self.page_size.display_name}, {self.label_width}mm x {self.label_height}mm, {self.columns} columns x {self.rows} rows, {'round corners' if self.corner_radius != 0 else 'sharp corners'})"
 
 PAPER_SIZES = {
-    "A4": PaperSize("A4", 210, 297)
+    "A4": PaperSize("A4", 210, 297),
+    "60x100mm": PaperSize("60x100mm", 60, 100),
 }
 
 LAYOUTS = {
@@ -137,6 +138,28 @@ LAYOUTS = {
         label_height=36.0,
         columns=3,
         rows=8,
+        column_spacing=0,
+        row_spacing=0,
+        corner_radius=0
+    ),
+    "1x12": SheetLayout(
+        display_name="1x12",
+        page_size=PAPER_SIZES["60x100mm"],
+        label_width=50,
+        label_height=8,
+        columns=1,
+        rows=12,
+        column_spacing=0,
+        row_spacing=0.1,
+        corner_radius=0
+    ),
+    "1x2": SheetLayout(
+        display_name="1x2",
+        page_size=PAPER_SIZES["60x100mm"],
+        label_width=60,
+        label_height=50,
+        columns=1,
+        rows=2,
         column_spacing=0,
         row_spacing=0,
         corner_radius=0
