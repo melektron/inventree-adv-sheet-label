@@ -72,7 +72,7 @@ class SheetLayout:
 
 PAPER_SIZES = {
     "A4": PaperSize("A4", 210, 297),
-    "Letter": PaperSize("Letter", 215.9, 279.4) # width, height
+    "Letter": PaperSize("Letter", 215.9, 279.4)
 }
 
 LAYOUTS = {
@@ -88,6 +88,19 @@ LAYOUTS = {
         corner_radius=3,
         spacing_top=12.7,
         spacing_left=4.6
+    ),
+    "22805": SheetLayout(
+        display_name="Avery22805",
+        page_size=PAPER_SIZES["Letter"],
+        label_width=37,
+        label_height=37,
+        columns=4,
+        rows=6,
+        column_spacing=8.8,                     # space between two columns, not margins
+        row_spacing=6.1,                        # space between two rows, not margins
+        corner_radius=0,                        # radius of label corners
+        spacing_top=12,                      # Spacing of top margin
+        spacing_left=20.1                         # Spacing of left margin
     ),
     "4780": SheetLayout(
         display_name="4780",
