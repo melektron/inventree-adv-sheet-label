@@ -71,24 +71,23 @@ class SheetLayout:
         return f"{self.display_name} ({self.page_size.display_name}, {self.label_width}mm x {self.label_height}mm, {self.columns} columns x {self.rows} rows, {'round corners' if self.corner_radius != 0 else 'sharp corners'})"
 
 PAPER_SIZES = {
-    "A4": PaperSize("A4", 210, 297)
+    "A4": PaperSize("A4", 210, 297),
     "Letter": PaperSize("Letter", 215.9, 279.4) # width, height
 }
 
 LAYOUTS = {
-
-    "8160": SheetLayout(                # The internal identification string. This MUST be unique.
-        display_name="8160",            # The name show in the UI dropdown. Should be unique. This should not include additional label data, that is added automatically.
-        page_size=PAPER_SIZES["Letter"],    # The size of the entire page 
-        label_width=66.7,               # widh of an individual label on the page in mm
-        label_height=25.4,              # height of an individual label on the page in mm
-        columns=3,                      # number of label columns on one page
-        rows=10,                         # number of label rows on one page
-        column_spacing=3.18,            # the space between two columns (not the left/right page margin). Might be 0.
-        row_spacing=0,                  # the space between two rows (not teh top/bottom page margin). Might be 0.
-        corner_radius=3,                # corner radius of an individual label. 0 if the corners are sharp
-        spacing_top=12.7,                # top margin of teh first label. None means automatic centering of the labels and is the default
-        spacing_left=4.6               # left margin of the first label. None means automatic centering of the labels and is the default
+    "8160": SheetLayout(
+        display_name="8160",
+        page_size=PAPER_SIZES["Letter"],
+        label_width=66.7,
+        label_height=25.4,
+        columns=3,
+        rows=10,
+        column_spacing=3.18,
+        row_spacing=0,
+        corner_radius=3,
+        spacing_top=12.7,
+        spacing_left=4.6
     ),
     "4780": SheetLayout(
         display_name="4780",
