@@ -90,7 +90,7 @@ LAYOUTS = {
         spacing_left=4.6
     ),
     "22805": SheetLayout(
-        display_name="Avery22805",
+        display_name="Avery 22805",
         page_size=PAPER_SIZES["Letter"],
         label_width=37,
         label_height=37,

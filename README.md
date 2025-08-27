@@ -24,7 +24,11 @@ A label printing plugin for [InvenTree](https://inventree.org) which provides su
 ## Installation
 
 > Note:
-> This plugin currently supports InvenTree versions **0.15.x** and **0.16.x** (tested with version **0.16.5**). Some older or newer versions might also work, but have not been tested. 
+> This plugin currently supports the following InvenTree versions:
+> - **0.15.x**
+> - **0.16.x** (tested with version **0.16.5**)
+> - **0.17.x** (tested with version **0.17.14**)
+> Some older or newer versions might also work, but have not been tested. 
 
 The simplest way of installing is by using the ```Install Plugin``` button on the InvenTree ```Plugin Settings``` page and then entering the package name:
 
@@ -73,14 +77,24 @@ Currently supported layouts:
 
 | Layout Identifier | Paper size | Label dimensions | Label layout        | Corner style |
 | ----------------- | ---------- | ---------------- | ------------------- | ------------ |
+| 8160              | US Letter  | 66.7mm x 25.4mm  | 3 columns x 10 rows | round        |
+| 22805             | US Letter  | 37.0mm x 37.0mm  | 4 columns x 6 rows  | sharp        |
 | 4780              | A4         | 48.5mm x 25.4mm  | 4 columns x 10 rows | sharp        | 
 | 4737              | A4         | 63.5mm x 29.6mm  | 3 columns x 9 rows  | round        | 
 | 4201              | A4         | 45.7mm x 16.9mm  | 4 columns x 16 rows | round        |
 | 7120-25           | A4         | 35.0mm x 35.0mm  | 5 columns x 7 rows  | sharp        |
 | 7160-10           | A4         | 63.5mm x 38.1mm  | 3 columns x 7 rows  | round        |
 | 4360              | A4         | 70.0mm x 36.0mm  | 3 columns x 8 rows  | sharp        |
+| 1367853           | A4         | 48.5mm x 16.9mm  | 4 columns x 16 rows | sharp        | 
+| 4210              | A4         | 38.1mm x 12.7mm  | 5 columns x 22 rows | sharp        | 
+| 1367586           | A4         | 70.0mm x 36.0mm  | 3 columns x 8 rows  | sharp        |
+| 8724              | A4         | 46.0mm x 11.1mm  | 4 columns x 21 rows | round        | 
+| Avery 50x25-R     | A4         | 50.0mm x 25.0mm  | 3 columns x 8 rows  | round        | 
+| Avery 105x42-R    | A4         | 105.0mm x 42.0mm | 2 columns x 7 rows  | sharp        | 
+| Avery 40x12-R     | A4         | 40.0mm x 12.0mm  | 4 columns x 17 rows | round        |
 
-As of right now, this selection is limited to whatever layouts I personally own and use. If the paper layout you need is not included, please file an [Issue with the "Sheet Layout" template](https://github.com/melektron/inventree-adv-sheet-label/issues/new?assignees=melektron&labels=sheet+layout&projects=&template=sheet-layout.md&title=New+Sheet+layout%3A+%5Blayout+name%5D). See the [Adding new layouts](#adding-new-layouts) for details.
+
+This selection is limited to whatever users of this plugin have contributed. If the paper layout you need is not included, please file an [Issue with the "Sheet Layout" template](https://github.com/melektron/inventree-adv-sheet-label/issues/new?assignees=melektron&labels=sheet+layout&projects=&template=sheet-layout.md&title=New+Sheet+layout%3A+%5Blayout+name%5D) or - even better - contribute it yourself. See the [Adding new layouts](#adding-new-layouts) section for details.
 
 You can also select one of the two ```Auto``` sheet layout presets. These will automatically select the correct sheet layout for the label template you are printing. This is done in one of three ways:
 - If you have a specific layout that's always used for a specific template, you can add the ```{"sheet_layout": "..."}``` metadata key to your label template configuration (replace ... with the identifier of the layout. This might not be the same as the display name, see [here](https://github.com/melektron/inventree-adv-sheet-label/blob/main/advanced_sheet_label/layouts.py#L77) what the identifier is). This is the cleanest way configure the correct layout for your templates.
