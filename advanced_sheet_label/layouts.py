@@ -126,6 +126,19 @@ LAYOUTS = {
         row_spacing=0,
         corner_radius=3
     ),
+    "L4731REV": SheetLayout(
+        display_name="L4731REV",
+        page_size=PAPER_SIZES["A4"],
+        label_width=25.4,
+        label_height=10,
+        columns=7,
+        rows=27,
+        column_spacing=2.5,
+        row_spacing=0,
+        corner_radius=1.47,
+        spacing_top=13.5,
+        spacing_left=8.6
+    ),
     "4201": SheetLayout(
         display_name="4201",
         page_size=PAPER_SIZES["A4"],
