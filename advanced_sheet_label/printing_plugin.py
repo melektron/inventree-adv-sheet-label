@@ -124,6 +124,18 @@ class AdvancedLabelSheetPlugin(LabelPrintingMixin, SettingsMixin, InvenTreePlugi
                 MinValueValidator(0)
             ],
             "hidden": True  # maybe shoudl actually show this for manual reset? but for now I'll not show it
+        },
+        "PRINTER_OFFSET_X": {
+            "name": "Printer offset X",
+            "description": "Correction in mm for printer registration drift, applied to every layout. Positive moves labels right. Leave at 0 unless a test print shows the sheet is consistently offset.",
+            "default": 0,
+            "validator": float
+        },
+        "PRINTER_OFFSET_Y": {
+            "name": "Printer offset Y",
+            "description": "Correction in mm for printer registration drift, applied to every layout. Positive moves labels down. Leave at 0 unless a test print shows the sheet is consistently offset.",
+            "default": 0,
+            "validator": float
         }
     }
 
@@ -361,14 +373,20 @@ class AdvancedLabelSheetPlugin(LabelPrintingMixin, SettingsMixin, InvenTreePlugi
 
         inner = ''.join(pages)
 
-        # Generate styles for individual cells (on each page)
+        # Generate styles for individual cells (on each page).
+        # The printer offsets shift the whole grid to compensate for registration
+        # drift. They are a property of the printer, not of the label sheet, so
+        # they live in the plugin settings rather than in the layout definition.
+        offset_x = float(self.get_setting("PRINTER_OFFSET_X") or 0)
+        offset_y = float(self.get_setting("PRINTER_OFFSET_Y") or 0)
+
         cell_styles = []
 
         for row in range(sheet_layout.rows):
             cell_styles.append(
                 f"""
             .label-sheet-row-{row} {{
-                top: {sheet_layout.row_position_top(row)}mm;
+                top: {sheet_layout.row_position_top(row) + offset_y}mm;
             }}
             """
             )
@@ -377,7 +395,7 @@ class AdvancedLabelSheetPlugin(LabelPrintingMixin, SettingsMixin, InvenTreePlugi
             cell_styles.append(
                 f"""
             .label-sheet-col-{col} {{
-                left: {sheet_layout.column_position_left(col)}mm;
+                left: {sheet_layout.column_position_left(col) + offset_x}mm;
             }}
             """
             )
