@@ -258,6 +258,17 @@ LAYOUTS = {
         row_spacing=0,
         corner_radius=0
     ),
+    "7163": SheetLayout(
+        display_name="Avery L7163 / J8163",
+        page_size=PAPER_SIZES["A4"],
+        label_width=99.1,
+        label_height=38.1,
+        columns=2,
+        rows=7,
+        column_spacing=2.5,     # the columns are NOT edge to edge on this sheet
+        row_spacing=0,
+        corner_radius=0
+    ),
 }
 
 LAYOUT_SELECT_OPTIONS = [
