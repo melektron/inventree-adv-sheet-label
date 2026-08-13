@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "inventree-adv-sheet-label"
-version = "1.3.1"
+version = "1.4.0"
 authors = [
   { name="melektron", email="matteo@elektron.work" },
 ]

@@ -258,6 +258,19 @@ LAYOUTS = {
         row_spacing=0,
         corner_radius=0
     ),
+    "4336": SheetLayout(
+        display_name="HERMA 4336 / Avery 4732",
+        page_size=PAPER_SIZES["A4"],
+        label_width=35.6,
+        label_height=16.9,
+        columns=5,
+        rows=16,
+        column_spacing=3.0,
+        row_spacing=0,
+        corner_radius=2,
+        spacing_top=13.3,
+        spacing_left=None
+    ),
 }
 
 LAYOUT_SELECT_OPTIONS = [
