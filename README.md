@@ -15,6 +15,7 @@ A label printing plugin for [InvenTree](https://inventree.org) which provides su
 1. [Errors](#errors)
 1. [Settings](#settings)
     1. [Default sheet layout](#default-sheet-layout)
+    1. [Printer offset X / Y](#printer-offset-x--y)
 1. [Contribution](#contribution)
     1. [Reporting and fixing bugs](#reporting-and-fixing-bugs)
     1. [Adding new layouts](#adding-new-layouts)
@@ -216,6 +217,14 @@ This section describes the settings available in the plugins settings page.
 ### Default sheet layout
 
 This setting allows you to specify which sheet layout is selected by default when opening the printing dialog. It makes sense to set this either to some *Auto* option or to the layout you are using the most. The default is ```Auto (round)```, which is probably fine for most use-cases.
+
+### Printer offset X / Y
+
+Most office printers do not place the page exactly where the PDF says, so a sheet that is geometrically correct can still print a millimetre or two off the die. These two settings shift the whole label grid to compensate, in mm: positive X moves labels right, positive Y moves them down. Both default to 0.
+
+This is a property of your *printer*, not of the label sheet, which is why it is a global setting rather than part of a layout definition — the same correction applies whichever sheet layout you print.
+
+To calibrate, print one sheet on plain paper at 100% scaling (scaling must be off, or the measurement is meaningless), hold it against a real label sheet, and measure the offset. If the labels land 2mm too high, set ```Printer offset Y``` to ```2```.
 
 
 ## Common Issues
