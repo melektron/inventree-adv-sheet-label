@@ -109,6 +109,7 @@ Currently supported layouts:
 | Avery 40x12-R           | A4         | 40.0mm x 12.0mm  | 4 columns x 17 rows | round        |
 | 8698                    | A4         | 52.5mm x 29.7mm  | 4 columns x 10 rows | sharp        |
 | HERMA 4336 / Avery 4732 | A4         | 35.6mm x 16.9mm  | 5 columns x 16 rows | round        |
+| Avery L7163 / J8163     | A4         | 99.1mm x 38.1mm  | 2 columns x 7 rows  | sharp        |
 
 
 This selection is limited to whatever users of this plugin have contributed. If the paper layout you need is not included, please file an [Issue with the "Sheet Layout" template](https://github.com/melektron/inventree-adv-sheet-label/issues/new?assignees=melektron&labels=sheet+layout&projects=&template=sheet-layout.md&title=New+Sheet+layout%3A+%5Blayout+name%5D) or - even better - contribute it yourself. See the [Adding new layouts](#adding-new-layouts) section for details.
